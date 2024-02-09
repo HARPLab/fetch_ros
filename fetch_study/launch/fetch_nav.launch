@@ -1,10 +1,5 @@
 <launch>
 
-  <!-- 
-  <launch>
-  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 map world" />
-  </launch> -->
-
   <!-- Navigation requires at least one map.
        In addition, it is sometimes desirable to have a "keepout" map
        which is used for costmaps, but not localization -->
@@ -57,8 +52,7 @@
     <arg name="odom_topic" value="$(arg odom_topic)" />
   </include>
 
-  <!-- tilt the head
+  <!-- tilt the head -->
   <node pkg="fetch_navigation" type="tilt_head.py" name="tilt_head_node" />
-  -->
 
 </launch>
