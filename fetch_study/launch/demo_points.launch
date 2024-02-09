@@ -63,6 +63,4 @@
   <node pkg="localization_data_pub" type="rviz_click_to_2d" name="rviz_click_to_2d"></node>
   -->
 
-  </node>   
-
 </launch>
