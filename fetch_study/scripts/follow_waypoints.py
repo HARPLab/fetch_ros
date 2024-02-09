@@ -1,6 +1,6 @@
-# https://github.com/slamcore/follow_waypoints/blob/master/nodes/follow_waypoints
-
 #!/usr/bin/env python
+
+# https://github.com/slamcore/follow_waypoints/blob/master/nodes/follow_waypoints
 
 import collections
 import time
