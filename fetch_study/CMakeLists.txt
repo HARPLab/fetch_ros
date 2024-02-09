@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(fetch_ros)
+project(fetch_study)
 
 find_package(catkin REQUIRED)
 catkin_package()
