@@ -40,9 +40,7 @@
   </include>
 
   <!-- Added by Ada combined reference frames -->
-  <launch>
   <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 map base_link" />
-  </launch>
 
   <!-- move the robot -->
   <include file="$(arg move_base_include)" >
