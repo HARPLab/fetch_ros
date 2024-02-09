@@ -51,16 +51,18 @@
   </include>
 
   <!-- Our custom scripts -->
-  <node pkg="fetch_study" type="follow_waypoints.py" name="hit_waypoints_node" />
+  <node pkg="fetch_study" type="demo_path.py" name="dwemo_path_node" />
 
   <!-- Initial Pose and Goal Publisher -->
   <!-- Publish: /initialpose, /move_base_simple/goal -->
   <node pkg="rviz" type="rviz" name="rviz"></node>
-
+  
   <!-- Subscribe: /initialpose, /move_base_simple/goal -->
   <!-- Publish: /initial_2d, /goal_2d -->
     <!-- Publish: /initial_2d, /goal_2d   
   <node pkg="localization_data_pub" type="rviz_click_to_2d" name="rviz_click_to_2d"></node>
   -->
+
+  </node>   
 
 </launch>

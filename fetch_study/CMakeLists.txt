@@ -16,6 +16,7 @@ install(
 
 install(
   PROGRAMS scripts/follow_waypoints.py
+  PROGRAMS scripts/demo_path.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
