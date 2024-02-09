@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>fetch_study</name>
+  <name>fetch_ros</name>
   <version>0.8.3</version>
   <description>Configuration and launch files for running ROS navigation on Fetch.</description>
 

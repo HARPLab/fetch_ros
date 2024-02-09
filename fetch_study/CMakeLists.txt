@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(fetch_study)
+project(fetch_ros)
 
 find_package(catkin REQUIRED)
 catkin_package()
@@ -15,7 +15,7 @@ install(
 )
 
 install(
-  PROGRAMS scripts/tilt_head.py
+  PROGRAMS scripts/follow_waypoints.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
