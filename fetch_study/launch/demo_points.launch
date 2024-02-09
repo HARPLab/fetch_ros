@@ -4,7 +4,7 @@
   <include file="$(find fetch_study)/launch/fetch_nav.launch" />
 
   <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 map world" />
-  <node pkg="tf2_ros" type="static_transform_publisher" name="link1_broadcaster" args="1 0 0 0 0 0 1 map base_link" />
+  <node pkg="tf2_ros" type="static_transform_publisher" name="link2_broadcaster" args="1 0 0 0 0 0 1 map base_link" />
 
   <!-- Start MoveIt -->
   <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
