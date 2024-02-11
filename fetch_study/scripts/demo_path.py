@@ -105,7 +105,7 @@ if __name__ == "__main__":
 
     # Setup clients
     move_base = MoveBaseClient()
-    # torso_action = FollowTrajectoryClient("torso_controller", ["torso_lift_joint"])
+    torso_action = FollowTrajectoryClient("torso_controller", ["torso_lift_joint"])
     # head_action = PointHeadClient()
     # grasping_client = GraspingClient()
 
@@ -113,11 +113,13 @@ if __name__ == "__main__":
     # Demonstrates the use of the navigation stack
     rospy.loginfo("Moving to table...")
 
-    move_base.goto(2.250, 3.118, 0.0)
-    move_base.goto(2.750, 3.118, 0.0)
+
+    move_base.goto(2.8, 1.629, 0.0)
+    move_base.goto(.171, -2.249, 0.0)
+    move_base.goto(2.5, -0.067, 0.0)
 
     # Move to second table
-    rospy.loginfo("Moving to second table...")
-    move_base.goto(-3.53, 3.75, 1.57)
-    move_base.goto(-3.53, 4.15, 1.57)
+    # rospy.loginfo("Moving to second table...")
+    # move_base.goto(-3.53, 3.75, 1.57)
+    # move_base.goto(-3.53, 4.15, 1.57)
 
