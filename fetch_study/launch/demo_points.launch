@@ -5,6 +5,10 @@
     <arg name="use_keepout" value="false" />
   </include>
 
+  <!-- Navigation parameter files -->
+  <arg name="move_base_include" default="$(find fetch_navigation)/launch/include/move_base.launch.xml" />
+  <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
+
   <arg name="x" default="0.0" />
   <arg name="y" default="0.0" />
   <arg name="z" default="0.0" />
