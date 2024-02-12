@@ -1,23 +1,26 @@
 <launch>
+  <arg name="x" default="0.0" />
+  <arg name="y" default="0.0" />
+  <arg name="z" default="0.0" />
+  <arg name="yaw" default="0.0" />
+
   <include file="$(find fetch_navigation)/launch/fetch_nav.launch" >
     <arg name="map_file" value="$(find fetch_maps)/maps/aims-ada.yaml" />
     <arg name="map_keepout_file" value="$(find fetch_maps)/maps/my_keepout_map.yaml" />
     <arg name="use_keepout" value="false" />
   </include>
 
-  <!-- Navigation parameter files -->
+  <!-- Navigation parameter files 
   <arg name="move_base_include" default="$(find fetch_navigation)/launch/include/move_base.launch.xml" />
   <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
+  -->
 
-  <arg name="x" default="0.0" />
-  <arg name="y" default="0.0" />
-  <arg name="z" default="0.0" />
-  <arg name="yaw" default="0.0" />
-
+  <!--
   <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
     <param name="publish_frequency" value="100.0"/>
   </node>
+  -->
 
   <!-- Start MoveIt -->
   <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
