@@ -12,7 +12,6 @@
     <arg name="load_robot_description" value="true"/>
   </include>
 
-
   <!-- URDF and TF support 
   <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
@@ -20,6 +19,22 @@
   </node>
   -->
 
+  <include file="$(find fetch_navigation)/launch/fetch_nav.launch" >
+    <arg name="map_file" value="$(find fetch_maps)/maps/aims-ada.yaml" />
+    <arg name="map_keepout_file" value="$(find fetch_maps)/maps/aims-keepout.yaml" />
+    <arg name="use_keepout" value="false" />
+  </include>
+
+  <!-- Navigation parameter files 
+  <arg name="move_base_include" default="$(find fetch_navigation)/launch/include/move_base.launch.xml" />
+  <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
+  -->
+
+  <!-- Start MoveIt -->
+  <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
+    <arg name="info" value="true"/><!-- publish grasp markers -->
+    <arg name="srdf" value="$(find fetch_gazebo)/robots/fetch.gazebo.srdf.xacro"/>
+  </include>
 
   <!-- Put a robot in gazebo, make it look pretty
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
@@ -43,23 +58,6 @@
   <node pkg="topic_tools" type="mux" name="cmd_vel_mux" respawn="true" args="base_controller/command /cmd_vel /teleop/cmd_vel">
     <remap from="mux" to="cmd_vel_mux" />
   </node>
-
-  <include file="$(find fetch_navigation)/launch/fetch_nav.launch" >
-    <arg name="map_file" value="$(find fetch_maps)/maps/aims-ada.yaml" />
-    <arg name="map_keepout_file" value="$(find fetch_maps)/maps/aims-keepout.yaml" />
-    <arg name="use_keepout" value="false" />
-  </include>
-
-  <!-- Navigation parameter files 
-  <arg name="move_base_include" default="$(find fetch_navigation)/launch/include/move_base.launch.xml" />
-  <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
-  -->
-
-  <!-- Start MoveIt -->
-  <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
-    <arg name="info" value="true"/><!-- publish grasp markers -->
-    <arg name="srdf" value="$(find fetch_gazebo)/robots/fetch.gazebo.srdf.xacro"/>
-  </include>
 
   <!-- Start Perception 
   <node name="basic_grasping_perception" pkg="simple_grasping" type="basic_grasping_perception" >
