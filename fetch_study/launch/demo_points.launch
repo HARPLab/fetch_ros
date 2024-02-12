@@ -7,11 +7,18 @@
   <!-- Setup controllers -->
   <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" />
 
-  <!-- URDF and TF support -->
+  <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
+  <include file="$(find fetch_moveit_config)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+
+  <!-- URDF and TF support 
   <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
     <param name="publish_frequency" value="100.0"/>
   </node>
+  -->
 
 
   <!-- Put a robot in gazebo, make it look pretty
