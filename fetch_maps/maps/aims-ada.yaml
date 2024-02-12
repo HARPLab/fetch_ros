@@ -1,4 +1,4 @@
-image: /home/adat/catkin_ws/src/fetch_ros/maps/aims.pgm
+image: aims.pgm
 resolution: 0.050000
 origin: [-9.398249, -7.676332, 0.000000]
 negate: 0
