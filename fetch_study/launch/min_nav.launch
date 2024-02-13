@@ -16,6 +16,11 @@
     <arg name="use_keepout" value="false" />
   </include>
 
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <param name="publish_frequency" value="100.0"/>
+  </node>
+
   <!-- Drive around 
   <node name="demo" pkg="fetch_study" type="demo_path.py" output="screen" /> -->
 
