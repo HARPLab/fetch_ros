@@ -4,6 +4,11 @@
   <arg name="z" default="0.0" />
   <arg name="yaw" default="0.0" />
 
+  <arg name="initial_pose_x" value=".171"/>
+  <arg name="initial_pose_y" value="-2.249"/>
+  <arg name="initial_pose_z" value="0.0"/>
+  <arg name="initial_pose_a" value="0.0"/>
+
   <!-- Setup controllers -->
   <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" />
 
