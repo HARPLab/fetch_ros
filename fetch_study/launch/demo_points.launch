@@ -24,7 +24,7 @@
   </node>
   -->
 
-  <include file="$(find fetch_navigation)/launch/fetch_nav.launch" >
+  <include file="$(find fetch_gazebo_demo)/launch/fetch_nav.launch" >
     <arg name="map_file" value="$(find fetch_maps)/maps/aims-ada.yaml" />
     <arg name="map_keepout_file" value="$(find fetch_maps)/maps/aims-keepout.yaml" />
     <arg name="use_keepout" value="false" />
@@ -35,6 +35,7 @@
   <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
   -->
 
+<!--
   <!-- Start MoveIt -->
   <include file="$(find fetch_moveit_config)/launch/move_group.launch" >
     <arg name="info" value="true"/><!-- publish grasp markers -->
@@ -46,6 +47,8 @@
         args="-urdf -x $(arg x) -y $(arg y) -z $(arg z) -Y $(arg yaw) -model fetch -param robot_description"/>
   <node name="prepare_robot" pkg="fetch_gazebo" type="prepare_simulated_robot.py" />
   -->
+-->
+
 
   <!-- Give this robot a serial number and version -->
   <param name="robot/serial" value="ABCDEFGHIJKLMNOPQRSTUVWX" />
